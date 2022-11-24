@@ -104,11 +104,20 @@ def return_file():
         else:
             pass # unknown
     elif request.method == 'GET':
+        target = 'images/'
         image_names = os.listdir('./images')
         filelist = [ f for f in image_names ]
-        for f in filelist:
-           return send_file('images/'+f, as_attachment=True)
-    
+        stream = BytesIO()
+        with ZipFile(stream, 'w') as zf:
+            for file in glob(os.path.join(target, '*.mp4')):
+                zf.write(file, os.path.basename(file))
+        stream.seek(0)
+    return send_file(
+        stream,
+        as_attachment=True,
+        download_name='archive.zip'
+    )
+           #return send_file('images/'+f, as_attachment=True)
 
 if __name__ == "__main__":
     app.run()
