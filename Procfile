@@ -1,1 +1,1 @@
-web: gunicorn wsgi:app  
+web: gunicorn proj_cutIA:app  
