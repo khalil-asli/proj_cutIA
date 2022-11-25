@@ -3,3 +3,4 @@ flask
 requests
 moviepy
 matplotlib
+remote-jinja
