@@ -19,6 +19,7 @@ from io import BytesIO
 from zipfile import ZipFile
 from moviepy.editor import *
 import matplotlib.pyplot as plt
+from remote_jinja import render_remote
 app = Flask(__name__)
   
  
@@ -31,11 +32,12 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 50000 * 50000
 
 @app.route('/')
 def upload_form():
-    image_names = os.listdir('./images')
+    image_names = os.listdir('./imagess')
     filelist = [ f for f in image_names ]
     for f in filelist:
-        os.remove(os. path. join('images/',f))
+        os.remove(os. path. join('imagess/',f))
     return render_template('upload.html')
+# return render_remote("https://cutai.webflow.io/")
 
 @app.route('/', methods=['POST'])
 def upload_video():
@@ -80,15 +82,15 @@ def get_gallery(filename):
     final = [clip.subclip(max(t-15,0),min(t+15, clip.duration))
                         for t in final_times]
     for i in range(len(final)):
-            final[i].write_videofile('images/worlds_cuts_V2'+str(i)+'.mp4',fps=24)
-    image_names = os.listdir('./images')
+            final[i].write_videofile('imagess/worlds_cuts_V2'+str(i)+'.mp4',fps=24)
+    image_names = os.listdir('./imagess')
     print(image_names)
 
     return render_template("gallery.html", image_names=image_names)
 
 @app.route('/upload/<filename>')
 def send_image(filename):
-    return send_from_directory("images", filename)
+    return send_from_directory("imagess", filename)
 
 @app.route('/display/<filename>')
 def display_video(filename):
@@ -104,8 +106,8 @@ def return_file():
         else:
             pass # unknown
     elif request.method == 'GET':
-        target = 'images/'
-        image_names = os.listdir('./images')
+        target = 'imagess/'
+        image_names = os.listdir('./imagess')
         filelist = [ f for f in image_names ]
         stream = BytesIO()
         with ZipFile(stream, 'w') as zf:
