@@ -121,5 +121,3 @@ def return_file():
     )
            #return send_file('images/'+f, as_attachment=True)
 
-if __name__ == "__main__":
-    app.run()
