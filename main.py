@@ -6,7 +6,8 @@ Created on Mon Oct 24 10:39:08 2022
 """
 
 from fileinput import filename
-from flask import Flask, flash, request, redirect, url_for, render_template, send_from_directory,send_file
+import logging
+from flask import Flask, flash, request, redirect, url_for, render_template, send_from_directory,send_file,request
 import urllib.request
 import os
 from werkzeug.utils import secure_filename
@@ -18,8 +19,9 @@ from glob import glob
 from io import BytesIO
 from zipfile import ZipFile
 from moviepy.editor import *
-import matplotlib.pyplot as plt
 from remote_jinja import render_remote
+from pytube import YouTube
+
 app = Flask(__name__)
   
  
@@ -121,3 +123,15 @@ def return_file():
     )
            #return send_file('images/'+f, as_attachment=True)
 
+@app.route("/download_video", methods=["GET","POST"])
+def download_video():
+    try:
+        youtube_url = request.form.get("URL")
+        download_path = YouTube(youtube_url).streams.filter(progressive=True,file_extension='mp4',res='720p').first().download(output_path='static/uploads/',filename='url_video.mp4')
+        fname = download_path.split("//")[-1]
+        video_name=os.path.basename(os.path.normpath(download_path))
+        #send_file(video_name, as_attachment=True)
+        return redirect(url_for('get_gallery',filename=video_name))
+    except:
+        logging.exception("Failed download")
+    return "Video download failed!"
