@@ -36,10 +36,18 @@
   <div class="header_proto wf-section">
     <div class="section_wrapper w-container">
       <div class="h1-wrapper is-width-40 is-block-center">
-        <h1 class="is-h1 is-text-align_center">C&#x27;est partie</h1><img src="{{ url_for('static', filename='images/Vector-1.png') }}" loading="lazy" alt="" class="image-2"><img src="{{ url_for('static', filename='images/Line-1.png') }}" loading="lazy" alt="" class="image-3">
+        <h1 class="is-h1 is-text-align_center">C&#x27;est parti</h1><img src="{{ url_for('static', filename='images/Vector-1.png') }}" loading="lazy" alt="" class="image-2"><img src="{{ url_for('static', filename='images/Line-1.png') }}" loading="lazy" alt="" class="image-3">
       </div>
       <p class="is-subtitle is-margin-t-24 is-text-align_center is-width-50 is-block-center">Importez votre fichier et recevez un documents zip avec votre vidéo découpée en moins de 2 minutes !</p>
       <div class="cta_wrapper is-margin-t-32">
+            <form action="{{ url_for('download_video')}}" method="post">
+              <dl>
+                <p>
+            <input type="url" name="URL">
+            <input type="submit" value="Submit">
+          </p>
+        </dl>
+            </form>
         <form method="post" action="/" enctype="multipart/form-data">
           <dl>
           <p>
