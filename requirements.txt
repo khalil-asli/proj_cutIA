@@ -5,3 +5,4 @@ moviepy
 matplotlib
 remote-jinja
 pytube
+gevent
