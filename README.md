@@ -11,9 +11,9 @@ pip install -r requirements.txt
 ## About The Project
 
 This project was developed with the following frameworks:
-  . Flask
-  . PyTube
-  . Webflow
+    Flask
+  / PyTube
+  / Webflow
   
 ## Installation
   1. Clone the repo:
