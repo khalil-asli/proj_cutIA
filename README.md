@@ -41,3 +41,6 @@ This project was developed with the following frameworks:
  ```
   flask run  
 ```
+## Contact:
+Equipe 10 : Célia GUYOBON ● Morgane LAUTONE ● Thanina KALI ● Ronad MABIKANA ● 
+Mohamed Khalil ASLI ● Riswane MARICAR ● Sandro DA SILVA ● Louis MARTIN DU NORD
