@@ -32,13 +32,16 @@
     <div class="navlink_wrapper">
       <div class="text-block-2">CutAi</div>
     </div>
+    <div class="navlink_wrapper">
+      <a class="nav-link active" aria-current="page" href="{{ url_for('upload_form')}}">Upload</a>
+    </div>
   </div>
   <div class="header_proto wf-section">
     <div class="section_wrapper w-container">
       <div class="h1-wrapper is-width-40 is-block-center">
         <h1 class="is-h1 is-text-align_center">C&#x27;est parti</h1><img src="{{ url_for('static', filename='images/Vector-1.png') }}" loading="lazy" alt="" class="image-2"><img src="{{ url_for('static', filename='images/Line-1.png') }}" loading="lazy" alt="" class="image-3">
       </div>
-      <p class="is-subtitle is-margin-t-24 is-text-align_center is-width-50 is-block-center">Récupérer vos clips dans un documents zip !</p>
+      <p class="is-subtitle is-margin-t-24 is-text-align_center is-width-50 is-block-center">Récupérez vos clips dans un document zip !</p>
       <div class="cta_wrapper is-margin-t-32">
         <form method="post" action="/" enctype="multipart/form-data">
           <dl>
@@ -67,7 +70,7 @@
   </div>
   <div id="testimonials" class="section_testimonials is-bg-blue500 wf-section">
     <div class="section_wrapper w-container">
-      <h2 class="is-h2 is-text-align_center">Récupérer vos clips dans un documents zip !</h2>
+      <h2 class="is-h2 is-text-align_center">Récupérez vos clips dans un document zip !</h2>
       <p class="is-subtitle is-text-align_center is-margin-t-24"></p>
       {% for image_name in image_names %}
                 <video autoplay="autoplay" controls="controls" preload="preload" width="140" height="150">
@@ -113,4 +116,3 @@
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
 </html>
-
