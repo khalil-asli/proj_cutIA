@@ -6,3 +6,4 @@ matplotlib
 remote-jinja
 pytube
 gevent
+numpy
