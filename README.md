@@ -23,7 +23,7 @@ This project was developed with the following frameworks:
   
   2. Create a virtual enviroment:
 ```
-  console.log("python3 -m venv env");  
+  "python3 -m venv env"  
 ```
 
  3. Activate the virtual enviroment:
