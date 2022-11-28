@@ -18,8 +18,26 @@ This project was developed with the following frameworks:
 ## Installation
   1. Clone the repo:
 ```
-function test() {
-  console.log("notice the blank line before this function?");
-}
+  console.log("https://github.com/khalil-asli/proj_cutIA.git");  
 ```
-  2. 
+  
+  2. Create a virtual enviroment:
+```
+  console.log("python3 -m venv env");  
+```
+
+ 3. Activate the virtual enviroment:
+ If operating on Windows:
+ ```
+  console.log(".venv\scripts\activate");  
+```
+
+4. Install all required dependicies:
+ ```
+  console.log("pip install -r requirements.txt");  
+```
+
+5. Run the app:
+ ```
+  console.log("flask run");  
+```
