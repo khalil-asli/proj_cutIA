@@ -49,6 +49,9 @@ Once you have installed ImageMagick, it will be automatically detected by MovieP
  ```
   IMAGEMAGICK_BINARY = "C:\\Program Files\\ImageMagick_VERSION\\convert.exe"
 ```
+You can also set the IMAGEMAGICK_BINARY environment variable See moviepy/config_defaults.py for details.
+
+If you are using an older version of ImageMagick, keep in mind the name of the executable is not magick.exe but convert.exe. In that case, the IMAGEMAGICK_BINARY property should be ``` C:\\Program Files\\ImageMagick_VERSION\\convert.exe```
 
 ## Contact:
 Equipe 10 : Célia GUYOBON ● Morgane LAUTONE ● Thanina KALI ● Ronad MABIKANA ● 
