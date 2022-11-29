@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Oct 24 10:39:08 2022
-
-@author: acer
-"""
-
 from fileinput import filename
 import logging
 from flask import Flask, flash, request, redirect, url_for, render_template, send_from_directory,send_file,request
@@ -135,3 +128,5 @@ def download_video():
     except:
         logging.exception("Failed download")
     return "Video download failed!"
+if __name__ == "__main__":
+    app.run()
