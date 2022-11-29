@@ -2,7 +2,6 @@ gunicorn
 flask
 requests
 moviepy
-matplotlib
 remote-jinja
 pytube
 gevent
